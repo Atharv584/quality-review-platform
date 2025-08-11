@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewHub - Quality Reviews You Can Trust</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>ReviewHub</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#add-review" class="nav-link">Add Review</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Discover Quality Reviews</h2>
+                <p>Find honest, detailed reviews from real users to make informed decisions</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="total-reviews">0</span>
+                        <span class="stat-label">Total Reviews</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="avg-rating">0.0</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-controls">
+                    <input type="text" id="search-input" placeholder="Search reviews..." class="search-input">
+                    <select id="category-filter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="technology">Technology</option>
+                        <option value="food">Food & Dining</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="travel">Travel</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="services">Services</option>
+                    </select>
+                    <select id="rating-filter" class="filter-select">
+                        <option value="">All Ratings</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="3">3+ Stars</option>
+                        <option value="2">2+ Stars</option>
+                        <option value="1">1+ Stars</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h3>Latest Reviews</h3>
+                <div id="reviews-grid" class="reviews-grid">
+                    <!-- Reviews will be dynamically inserted here -->
+                </div>
+                <div id="no-reviews" class="no-reviews" style="display: none;">
+                    <p>No reviews found matching your criteria.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Review Section -->
+        <section id="add-review" class="add-review-section">
+            <div class="container">
+                <h3>Add Your Review</h3>
+                <form id="review-form" class="review-form">
+                    <div class="form-group">
+                        <label for="product-name">Product/Service Name</label>
+                        <input type="text" id="product-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select a category</option>
+                            <option value="technology">Technology</option>
+                            <option value="food">Food & Dining</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="travel">Travel</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="services">Services</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewer-name">Your Name</label>
+                        <input type="text" id="reviewer-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="rating-input">
+                            <span class="star" data-rating="1">★</span>
+                            <span class="star" data-rating="2">★</span>
+                            <span class="star" data-rating="3">★</span>
+                            <span class="star" data-rating="4">★</span>
+                            <span class="star" data-rating="5">★</span>
+                        </div>
+                        <input type="hidden" id="rating" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review-text">Your Review</label>
+                        <textarea id="review-text" rows="5" placeholder="Share your experience..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ReviewHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
